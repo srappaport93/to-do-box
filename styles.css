@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monotype;
+}
+
+.content {
+  margin: 5px auto;
+  width: 500px;
+}
+
+.user-input {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  background: #33D7FF;
+}
+
+.item, .priority {
+  width: 300px;
+  margin: 20px auto 20px auto;
+  padding: 10px;
+  font-size: 90%;
+}
+
+.addtolist {
+  width: 300px;
+  padding: 5px;
+  margin: 20px auto 20px auto;
+  background: #FF334F;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 100%;
+  font-family: monospace;
+}
+
+.card-container {
+  padding: 30px;
+  background: #96FF45;
+}
+
+.list {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 300px;
+  background: #fff;
+}
+
+h1 {padding: 10px;
+    margin: 5px auto;
+    font-family: monospace;
+    font-size: 200%;
+    text-align: center;}
+
+button {color: white;
+        }
