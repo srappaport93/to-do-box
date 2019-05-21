@@ -1,6 +1,5 @@
 var cardContainer = $('.card-container');
 var submit = $('.addtolist');
-
 var item_array = [];
 var priority_array=[];
 
@@ -9,9 +8,7 @@ getTodoItems();
 
 ///section where local storage stuff is retrieved
 function getTodoItems() {
-  console.log('i run')
     if (localStorage.length != 0) {
-      console.log('i tried')
         for (var i = 0; i < localStorage.length; i++) {
           var key = localStorage.key(0);
           item_arr = JSON.parse(key);
@@ -22,9 +19,10 @@ function getTodoItems() {
     console.log(priority_arr)
 
     for (var k = 0; k < item_arr.length; k++) {
-
     var itm = item_arr[k];
     var prio = priority_arr[k];
+    item_array.push(itm);
+    priority_array.push(prio);
     var dummy = {itm: itm, prio: prio};
     console.log(dummy)
     cardContainer.append(`
@@ -55,8 +53,7 @@ function appendToDo() {
   cardContainer.append(`
     <p class="list"><button>___</button>
   ${list.item} is ${list.priority} priority.
-   </p>
-`);
+   </p>`);
   var BUTT = $('button');
   BUTT.on("click", deleteItem);
 
@@ -66,17 +63,16 @@ function appendToDo() {
 
   $('.item').val("");
   $('.priority').val("");
-
-}
-
-function deleteItem() {
-  event.target.parentNode.remove()
   }
 
-  function storeList (listItem, listPriority) {
+function deleteItem() {
+  event.target.parentNode.remove();
+  }
+
+function storeList (listItem, listPriority) {
     localStorage.clear()
     item_array.push(listItem);
     priority_array.push(listPriority);
     localStorage.setItem(JSON.stringify(item_array), JSON.stringify(priority_array));
     console.log(localStorage)
-}
+    }
